@@ -119,7 +119,7 @@
           </li>
           {{ else }}
           <li class="dropdown {{ $active }}">
-            <a href="{{ .URL }}">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" title="{{ .Name }}">{{ .Name }}</a>
           </li>
           {{ end }}
           {{ end }}

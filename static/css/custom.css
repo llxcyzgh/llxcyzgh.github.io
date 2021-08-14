@@ -23,3 +23,7 @@
 .navbar-default .navbar-nav > li.language-set > a:focus {
     background: none;
 }
+
+.navbar ul.nav > li > a {
+    text-transform: none;
+}
