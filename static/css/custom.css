@@ -27,3 +27,7 @@
 .navbar ul.nav > li > a {
     text-transform: none;
 }
+
+#all section {
+    margin-bottom: unset;
+}
