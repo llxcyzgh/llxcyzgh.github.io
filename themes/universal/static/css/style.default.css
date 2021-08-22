@@ -2616,7 +2616,6 @@ fieldset[disabled] .btn-template-primary.active {
   #copyright p {
     float: none !important;
     text-align: center;
-    margin-bottom: 10px;
   }
 }
 [data-animate] {

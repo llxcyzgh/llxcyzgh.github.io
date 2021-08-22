@@ -1,4 +1,6 @@
 #################### default parameters ################################
+app_name = "Carmean&Gohlke"
+
 viewMorePostLink = "/blog/"
 author = "DevCows"
 defaultKeywords = ["devows", "hugo", "go"]

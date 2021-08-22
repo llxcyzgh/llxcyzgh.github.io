@@ -50,3 +50,49 @@ weight = 4
 name = "Email"
 url = "mailto:hello@universal.com"
 pre = "<i class='fas fa-2x fa-envelope'></i>"
+
+
+
+# bottom
+# bottom_middle
+[[bottom_middle]]
+name = "Carmean&Gohlke"
+url = "/carmean-gohlke"
+weight = 1
+
+[[bottom_middle]]
+name = "Events&Activities"
+url = "/events-activities"
+weight = 2
+
+[[bottom_middle]]
+name = "Contact with us"
+url = "/contact"
+weight = 3
+
+[[bottom_middle]]
+name = "Join us"
+url = "/join"
+weight = 4
+
+
+# bottom_right
+[[bottom_right]]
+name = "Business lines"
+url = "/business-lines"
+weight = 1
+
+[[bottom_right]]
+name = "Talents Search"
+url = "/talents-search"
+weight = 2
+
+[[bottom_right]]
+name = "Career Development Consulting"
+url = "/career-development-consulting"
+weight = 3
+
+[[bottom_right]]
+name = "Salary and Welfare"
+url = "/salary-and-welfare"
+weight = 4
