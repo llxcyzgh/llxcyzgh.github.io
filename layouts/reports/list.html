@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body>
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <div id="content">
+    <div class="container">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "reports") }}
+
+      <section class="report">
+        <div class="row">
+
+
+          {{ range $paginator.Pages }}
+
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail bg-darkolivegreen">
+              <a href="{{ .Permalink }}">
+                {{ if .Params.banner }}
+                <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="">
+                {{ else }}
+                <img src="{{ " img/placeholder.png" | relURL }}" class="img-responsive" alt="">
+                {{ end }}
+              </a>
+
+              <div class="caption">
+                <h3 class="text-light">{{ .Title }}</h3>
+
+                {{ if isset .Params "date" }}
+                <p class="date-comments text-light">
+                    <i class="far fa-calendar"></i>
+                    {{ .Date.Format .Site.Params.date_format}}
+                </p>
+                {{ end }}
+
+                <p>
+                  <a href="{{ .Permalink }}" class="btn btn-default" role="button">
+                    {{ i18n "readMore" }}
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {{ end }}
+
+        </div>
+      </section>
+
+      <ul class="pager">
+        {{ if .Paginator.HasPrev }}
+        <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
+        {{ else }}
+        <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+        {{ end }}
+
+        {{ if .Paginator.HasNext }}
+        <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
+        {{ else }}
+        <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+        {{ end }}
+      </ul>
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
