@@ -18,3 +18,8 @@ blog = "/blog/:year/:month/:day/:filename/"
 category = "categories"
 tag = "tags"
 author = "authors"
+
+
+[markup]
+[markup.goldmark.renderer]
+unsafe = true

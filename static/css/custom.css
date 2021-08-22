@@ -31,3 +31,18 @@
 #all section {
     margin-bottom: unset;
 }
+
+.panel-custom, .panel-custom > .panel-footer {
+    background-color: #e5e5e5;
+}
+
+.panel-custom > .panel-heading, .panel-custom > .panel-body {
+    color: #ffffff;
+    background-color: #414d3b;
+}
+
+.panel-custom > .panel-footer > .list-group > .list-group-item {
+    border: none;
+    background-color: unset;
+}
+
