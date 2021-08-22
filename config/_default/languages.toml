@@ -1,7 +1,7 @@
 ############################# English ############################
 [en]
 languageName = "En"
-title = "My Hugo"
+title = "Carmean Gohlke"
 contentDir = "content/en" # content/english
 weight = 1
 ########### footer content ##########
@@ -15,7 +15,7 @@ footer_content = "Lorem ipsum dolor sit amet, consectetur elit. Consjat tristiqu
 ############################# Chinese ############################
 [zh]
 languageName = "中文"
-title = "标题 - 示例"
+title = "Carmean Gohlke"
 contentDir = "content/zh" # content/chinese
 weight = 2
 ########### footer content ##########
