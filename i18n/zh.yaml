@@ -78,3 +78,7 @@
 
 - id: 404NavHome
   translation: "跳到主页"
+
+#  custom
+- id: researchReport
+  translation: "Research&Report"

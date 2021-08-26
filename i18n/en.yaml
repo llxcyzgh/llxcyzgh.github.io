@@ -78,3 +78,7 @@
 
 - id: 404NavHome
   translation: "Go to homepage"
+
+#  custom
+- id: researchReport
+  translation: "Research&Report"

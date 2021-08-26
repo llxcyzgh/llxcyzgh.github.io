@@ -1,0 +1,9 @@
+<div class="panel panel-default bg-darkolivegreen report-sidebar">
+  {{ with site.GetPage "reports/sidebar/sidebar" }}
+
+  <div class="panel-body text-light">
+    {{ .Content }}
+  </div>
+
+  {{ end }}
+</div>
