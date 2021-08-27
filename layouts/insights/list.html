@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body>
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <div id="content">
+    <div class="container">
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "insights") }}
+
+      <section class="insights">
+        <div class="row">
+          <div class="col-md-9">
+            <!-- list -->
+            <div class="list-group">
+              {{ range $paginator.Pages }}
+
+              <div class="list-group-item">
+                <div class="row">
+                  <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                    <a href="{{ .Permalink }}">
+                      {{ if .Params.banner }}
+                      <img src="{{ .Params.banner | relURL }}" style="max-height: 150px" class="img-responsive img-circle" alt="">
+                      {{ else }}
+                      <img src='{{ "img/placeholder.png" | relURL }}' style="max-height: 150px" class="img-responsive img-circle" alt="">
+                      {{ end }}
+                    </a>
+                  </div>
+
+                  <div class="col-xs-8 col-sm-9 col-md-9 col-lg-9">
+                    <h3 class="list-group-item-heading">{{ .Title }}</h3>
+                    <p class="font-bold">{{ .Params.Author }} - {{ .Params.JobTitle }}</p>
+
+                    {{ if isset .Params "date" }}
+                    <p class="date-comments">
+                      <i class="far fa-calendar"></i>
+                      {{ .Date.Format .Site.Params.date_format}}
+                    </p>
+                    {{ end }}
+
+                    <p>
+                      <a href="{{ .Permalink }}" class="btn btn-default" role="button">
+                        {{ i18n "readMore" }}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {{ end }}
+            </div>
+
+            <!-- paginator -->
+            <div>
+              <ul class="pager">
+                {{ if .Paginator.HasPrev }}
+                <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
+                {{ else }}
+                <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+                {{ end }}
+
+                {{ if .Paginator.HasNext }}
+                <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
+                {{ else }}
+                <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+                {{ end }}
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- sidebar -->
+          <div class="col-md-3">
+            {{ partial "insights_sidebar.html" }}
+          </div>
+
+
+        </div>
+      </section>
+
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

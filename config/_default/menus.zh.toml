@@ -19,8 +19,8 @@ weight = 3
 
 [[main]]
 name = "Principal Insights"
-identifier = "menu.principal"
-url = "/principal"
+identifier = "menu.insights"
+url = "insights"
 weight = 4
 
 [[main]]

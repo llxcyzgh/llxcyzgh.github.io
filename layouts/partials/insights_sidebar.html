@@ -1,0 +1,45 @@
+<div class="panel panel-default bg-darkolivegreen report-sidebar">
+  {{ with site.GetPage "insights/sidebar/sidebar" }}
+
+  <div class="panel-body text-light">
+    {{ .Content }}
+<!--    <h4 class="text-light">{{ .Params.Text.Title }}</h4>-->
+<!--    <p>{{ .Params.Text.Header }}</p>-->
+<!--    <p>{{ .Params.Text.Footer }}</p>-->
+
+
+    <form style="margin-top: 30px">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-user"></i></div>
+          <input type="text" class="form-control" id="name" placeholder="{{ .Params.Fields.Name }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
+          <input type="text" class="form-control" id="city" placeholder="{{ .Params.Fields.City }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-building"></i></div>
+          <input type="text" class="form-control" id="schoolName" placeholder="{{ .Params.Fields.SchoolName }}">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
+          <input type="email" class="form-control" id="email" placeholder="{{ .Params.Fields.Email }}">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-default">Transfer cash</button>
+      </div>
+    </form>
+
+  </div>
+
+  {{ end }}
+</div>
