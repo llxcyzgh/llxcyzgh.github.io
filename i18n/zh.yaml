@@ -82,3 +82,9 @@
 #  custom
 - id: researchReport
   translation: "Research&Report"
+
+- id: leadership
+  translation: "Leadership"
+
+- id: leadershipProfile
+  translation: "Leadership Profile"

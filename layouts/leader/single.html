@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<style>
+  @media (min-width: 992px) {
+    .mt-md-20 {
+      margin-top: 30px;
+    }
+  }
+</style>
+<body>
+
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <div id="content">
+    <div class="container">
+      <div style="background-color: #aaa; padding: 10px">
+        <div class="row">
+          <div class="col-sm-12 col-md-4">
+            <img class="img-responsive img-circle" style="max-height: 200px; margin: 0 auto"
+                 src="{{ .Params.Avatar | relURL }}" alt="{{ .Params.Name }}">
+          </div>
+
+          <div class="col-sm-12 col-md-8 mt-md-20">
+            <p class="font-bold" style="font-size: 20px">{{ .Params.Name }}</p>
+            <p class="font-bold" style="font-size: 20px">{{ .Params.JobTitle }}</p>
+            <br>
+            <p class="font-bold" style="font-size: 20px">{{ .Params.Email }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin: 30px 0">
+
+        {{ .Content }}
+
+      </div>
+
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

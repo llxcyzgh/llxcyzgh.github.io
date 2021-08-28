@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body>
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  <!--  {{ partial "breadcrumbs.html" . }}-->
+
+  <div id="content" class="page-about-us">
+    <section>
+      <div class="about jumbotron" style="background: url('{{ .Params.Banner | relURL }}') center center repeat">
+        <div class="dark-mask"></div>
+        <div class="container" style="position: relative">
+          {{ .Content }}
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div>
+        <h3 class="text-center">{{ i18n "leadership" }}</h3>
+        <div class="row">
+
+          {{ $leaders := .Paginate (where site.RegularPages "Type" "leader") }}
+          {{ range first 4 $leaders.Pages }}
+          <div class="col-sm-6 col-md-3 text-center">
+            <a href="{{ .Permalink }}">
+              <img class="img-responsive img-circle" style="max-height: 150px; margin: 0 auto;" src="{{ .Params.Avatar | relURL }}" alt="{{ .Params.Name }}">
+            </a>
+            <div style="margin-top: 15px">
+              <a class="font-bold" href="{{ .Permalink }}">
+                {{ .Params.Name }}
+                <br>
+                {{ .Params.JobTitle }}
+              </a>
+            </div>
+          </div>
+          {{ end }}
+
+        </div>
+      </div>
+
+
+      <!-- /.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>
