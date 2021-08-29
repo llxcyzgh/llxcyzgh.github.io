@@ -11,25 +11,29 @@
   <!--  {{ partial "breadcrumbs.html" . }}-->
 
   <div id="content" class="page-about-us">
-    <section>
-      <div class="about jumbotron" style="background: url('{{ .Params.Banner | relURL }}') center center repeat">
-        <div class="dark-mask"></div>
-        <div class="container" style="position: relative">
-          {{ .Content }}
-        </div>
-      </div>
-    </section>
+    <!--    <section>-->
+    <!--      <div class="about jumbotron" style="background: url('{{ .Params.Banner | relURL }}') center center repeat">-->
+    <!--        <div class="dark-mask"></div>-->
+    <!--        <div class="container" style="position: relative">-->
+    <!--          {{ .Content }}-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </section>-->
+
+    <div style="height: 350px; background: url('{{ .Params.Banner | relURL }}') center center no-repeat; background-size: cover;"></div>
 
     <div class="container">
+      <!-- leadership -->
       <div>
         <h3 class="text-center">{{ i18n "leadership" }}</h3>
         <div class="row">
 
           {{ $leaders := .Paginate (where site.RegularPages "Type" "leader") }}
           {{ range first 4 $leaders.Pages }}
-          <div class="col-sm-6 col-md-3 text-center">
+          <div class="col-sm-6 col-md-3 text-center" style="margin-bottom: 20px">
             <a href="{{ .Permalink }}">
-              <img class="img-responsive img-circle" style="max-height: 150px; margin: 0 auto;" src="{{ .Params.Avatar | relURL }}" alt="{{ .Params.Name }}">
+              <img class="img-responsive img-circle" style="max-height: 150px; margin: 0 auto;"
+                   src="{{ .Params.Avatar | relURL }}" alt="{{ .Params.Name }}">
             </a>
             <div style="margin-top: 15px">
               <a class="font-bold" href="{{ .Permalink }}">
@@ -42,6 +46,11 @@
           {{ end }}
 
         </div>
+      </div>
+
+      <!-- vision -->
+      <div>
+        {{ .Content }}
       </div>
 
 
