@@ -1,10 +1,9 @@
 +++
-layout = "layouts/about/leader.html" 
 type = "leader"
 
 title = "Leadership Profile"
-name = "Geoff Gohlke"
 weight = 2
+name = "Geoff Gohlke"
 jobTitle = "CEO, Asia"
 email = "iancarmean@carmeanandgohlke.com"
 avatar = "img/insights/avatar.jpg"

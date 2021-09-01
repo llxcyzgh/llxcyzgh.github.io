@@ -1,6 +1,7 @@
 +++
 type = "leader"
 
+title = "Leadership Profile"
 weight = 3
 name = "Leon Ren"
 jobTitle = "Vice-President, Greater China"

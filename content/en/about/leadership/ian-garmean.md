@@ -1,6 +1,7 @@
 +++
 type = "leader"
 
+title = "Leadership Profile"
 weight = 1
 name = "Ian Garmean"
 jobTitle = "Chairman of the board"
