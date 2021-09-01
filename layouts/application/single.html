@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<script defer src="https://cdn.bootcdn.net/ajax/libs/alpinejs/3.2.2/cdn.min.js"></script>
+{{ partial "head.html" . }}
+
+
+<body>
+
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <div id="content">
+    <div class="container">
+      <div id="form">
+        <h2>{{ i18n "candidateApplication" }}</h2>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <h3>{{ i18n "contactInformation" }}</h3>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "firstName" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "lastName" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "emailAddress" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "phoneNumber" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "preferredMethodOfContact" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "countryOfResidence" }}'>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            <h3>{{ i18n "professionalInformation" }}</h3>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "yearsOfProfessionalExperience" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "schoolName" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "yourPositionWithinTheOrganization" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "currentYearSalary" }}'>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder='{{ i18n "educationBackground" }}'>
+            </div>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col-md-12 col-lg-12">
+            {{ .Content }}
+          </div>
+
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="form-group">
+              <input class="form-control" type="file">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <button class="btn btn-default btn-lg btn-block text-light bg-darkolivegreen">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+</body>
+</html>

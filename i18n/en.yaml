@@ -88,3 +88,45 @@
 
 - id: leadershipProfile
   translation: "Leadership Profile"
+
+- id: candidateApplication
+  translation: "Candidate Application"
+
+- id: contactInformation
+  translation: "Contact Information"
+
+- id: professionalInformation
+  translation: "Professional Information"
+
+- id: firstName
+  translation: "First Name"
+
+- id: lastName
+  translation: "Last Name"
+
+- id: emailAddress
+  translation: "E-mail Address"
+
+- id: phoneNumber
+  translation: "Phone Number"
+
+- id: preferredMethodOfContact
+  translation: "Preferred Method of Contact"
+
+- id: countryOfResidence
+  translation: "Country of Residence"
+
+- id: yearsOfProfessionalExperience
+  translation: "Years of Professional Experience"
+
+- id: schoolName
+  translation: "School Name"
+
+- id: yourPositionWithinTheOrganization
+  translation: "Your position within the organization"
+
+- id: currentYearSalary
+  translation: "Current/Most Recent salary in USD/a year"
+
+- id: educationBackground
+  translation: "Education Background"
