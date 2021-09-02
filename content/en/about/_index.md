@@ -22,12 +22,11 @@ We strive to become a trusted partner of our client, and we are committed to pro
 
 When we founded Carmean&Gohlke, we formulated three core values that we strictly abide by. These values not only lead us to rapid development, but also enable us to win the respect of our client.
 
-### Integrity
-
+- **Integrity**  
 In the process of cooperation, we strictly abide by business ethics, be honest and trustworthy.
 
-### Grow with our clients
+- **Grow with our clients**  
 Based on client needs, in-depth collaboration, exceeding customer expectations.
 
-### Diversity & Tolerance
+- **Diversity & Tolerance**  
 Create a diverse and tolerant working environment, employees have the opportunity to become the best of themselves.

@@ -3,9 +3,9 @@ type = "leader"
 
 title = "Leadership Profile"
 weight = 4
-name = "Melissa Jiang"
+name = "Melissa Zhang"
 jobTitle = "CEO, Malaysia"
-email = "iancarmean@carmeanandgohlke.com"
+email = "lisazhang@carmeanandgohlke.com"
 avatar = "img/insights/avatar.jpg"
 +++
 

@@ -81,13 +81,13 @@
 
 #  custom
 - id: researchReport
-  translation: "Research&Report"
+  translation: "研究报告"
 
 - id: leadership
-  translation: "Leadership"
+  translation: "管理层"
 
 - id: leadershipProfile
-  translation: "Leadership Profile"
+  translation: "管理层简介"
 
 - id: candidateApplication
   translation: "Candidate Application"

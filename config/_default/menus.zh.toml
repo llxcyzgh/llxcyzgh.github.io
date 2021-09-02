@@ -6,19 +6,19 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "服务"
+name = "我们的业务"
 identifier = "menu.services"
 url = "/services"
 weight = 2
 
 [[main]]
-name = "报告"
+name = "研究报告"
 identifier = "menu.reports"
 url = "/reports"
 weight = 3
 
 [[main]]
-name = "Principal Insights"
+name = "校长洞见"
 identifier = "menu.insights"
 url = "insights"
 weight = 4
@@ -56,43 +56,43 @@ pre = "<i class='fas fa-2x fa-envelope'></i>"
 # bottom
 # bottom_middle
 [[bottom_middle]]
-name = "Carmean&Gohlke"
+name = "凯格咨询"
 url = "/carmean-gohlke"
 weight = 1
 
 [[bottom_middle]]
-name = "Events&Activities"
+name = "新闻活动"
 url = "/events-activities"
 weight = 2
 
 [[bottom_middle]]
-name = "Contact with us"
+name = "联系我们"
 url = "/contact"
 weight = 3
 
 [[bottom_middle]]
-name = "Join us"
+name = "加入我们"
 url = "/join"
 weight = 4
 
 
 # bottom_right
 [[bottom_right]]
-name = "Business lines"
+name = "业务线"
 url = "/business-lines"
 weight = 1
 
 [[bottom_right]]
-name = "Talents Search"
+name = "人才寻访"
 url = "/talents-search"
 weight = 2
 
 [[bottom_right]]
-name = "Career Development Consulting"
+name = "职业发展咨询"
 url = "/career-development-consulting"
 weight = 3
 
 [[bottom_right]]
-name = "Salary and Welfare"
+name = "薪酬福利咨询"
 url = "/salary-and-welfare"
 weight = 4
