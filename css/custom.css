@@ -32,6 +32,10 @@
     margin-bottom: unset;
 }
 
+#footer {
+    margin-top: 50px;
+}
+
 .panel-custom, .panel-custom > .panel-footer {
     background-color: #e5e5e5;
 }
