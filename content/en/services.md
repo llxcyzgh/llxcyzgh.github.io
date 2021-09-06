@@ -1,4 +1,5 @@
 +++
+type = "services"
 title = "Our Services"
 description = "Our Services"
 keywords = ["services"]
