@@ -34,23 +34,16 @@ weight = 5
 # Top bar social links menu
 
 [[topbar]]
+weight = 1
+name = "Linkedin"
+url = "http://linkedin.com"
+pre = "<i class='fab fa-2x fa-linkedin'></i>"
+
+[[topbar]]
 weight = 2
-name = "Facebook"
-url = "http://facebook.com"
-pre = "<i class='fab fa-2x fa-facebook'></i>"
-
-[[topbar]]
-weight = 3
-name = "Twitter"
-url = "http://twitter.com"
-pre = "<i class='fab fa-2x fa-twitter'></i>"
-
-[[topbar]]
-weight = 4
-name = "Email"
-url = "mailto:hello@universal.com"
-pre = "<i class='fas fa-2x fa-envelope'></i>"
-
+name = "Wechat"
+url = "http://wechat.com"
+pre = "<i class='fab fa-2x fa-weixin'></i>"
 
 
 # bottom

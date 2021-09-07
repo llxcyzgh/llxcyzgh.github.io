@@ -79,11 +79,8 @@ address = """<p class="text-uppercase"><strong>Universal Ltd.</strong>
 # Enable or disable top bar with social icons
 [topbar]
 enable = true
-text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
-      <p class="hidden-md hidden-lg"><a href="tel:+420 777 555 333" data-animate-hover="pulse"><i class="fas fa-phone"></i></a>
-      <a href="mailto:hello@universal.com" data-animate-hover="pulse"><i class="fas fa-envelope"></i></a>
-      </p>
-      """
+email = "business@carmeanandgohlke.com"
+text = "Contact us on"
 
 # Enable and disable widgets for the right sidebar
 [widgets]

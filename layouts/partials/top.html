@@ -4,7 +4,10 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-5">
-          {{ .Site.Params.topbar.text | safeHTML }}
+          <p class="hidden-sm hidden-xs" style="line-height:25px">{{ .Site.Params.topbar.text }} {{ .Site.Params.topbar.email }}</p>
+          <p class="hidden-md hidden-lg">
+            <a style="color:#999" href="mailto:business@carmeanandgohlke.com" data-animate-hover="pulse"><i class="fas fa-2x fa-envelope"></i></a>
+          </p>
         </div>
         <div class="col-xs-7">
           <div class="social">
