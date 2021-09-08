@@ -1,48 +1,36 @@
 +++
-title = "服务"
-description = "服务"
-keywords = ["服务"]
+type = "services"
+title = "我们的服务"
+description = "我们的服务"
+keywords = ["services"]
+
+[[list]]
+title = "人才寻访"
+description = "我们与学校人力资源部门专家以及职位直线领导深度沟通，更加精准地了解职位需求，同客户深度协作，以达到高效助力学校人才团队的搭建。"
+[[list.links]]
+link = "校长/副校长"
+[[list.links]]
+link = "中层学科/部门负责人"
+[[list.links]]
+link = "学科教师"
+
+[[list]]
+title = "职业发展咨询"
+description = "在学校发展的初期、快速成长期、稳定期或者转型期，对校长的领导力有着不同的要求，同时从个人职业发展的角度来看，在不同的职业阶段，个人诉求也有所区别，因此，凯格咨询为客户学校提供专业的校长及教师职业发展咨询。"
+[[list.links]]
+link = "校长领导力"
+[[list.links]]
+link = "教师职业发展"
+
+[[list]]
+title = "薪酬福利咨询"
+description = "完善且具有竞争力的薪酬福利体系是一所国际化学校健康、长远发展的基石，因为它关系到人才团队的稳定性，同时也是企业文化的重要组成部分。如何确保学校的薪资在地区范围内具有竞争力？如何设置更加完善的薪资结构？如何为团队提供更加人性化的员工关怀？凯格咨询与客户学校密切协作，以行业数据为基础，协助学校搭建完善的薪酬福利体系。"
+[[list.links]]
+link = "高管薪酬福利"
+[[list.links]]
+link = "中层管理者薪酬福利"
+[[list.links]]
+link = "教师薪酬福利"
 +++
 
-As a professional consulting company, Carmean&Gohlke aims to provide recruiting services, career development and consulting,salary and benefits consulting for top-tier international schools in Asia, and improve the sustainable development of client schools and the improvement of organizational effectiveness through our services.
-
-<!-- raw html -->
-<div class="container">
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-custom">
-          <div class="panel-heading">
-            <h3 class="panel-title">Talents Scouting</h3>
-          </div>
-          <div class="panel-body">
-            We communicate with human resources department experts and other leaders to understand job requirements. We then collaborate with the client to achieve efficient support for the establishment of the school's talent team.
-          </div>
-          <div class="panel-footer">
-            <ul class="list-group">
-                <li class="list-group-item"><a href="/">Principal/Deputy Principal</a></li>
-                <li class="list-group-item"><a href="/">Head of subject/department</a></li>
-                <li class="list-group-item"><a href="/">Subject teacher</a></li>
-            </ul>
-          </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel title</h3>
-          </div>
-          <div class="panel-body">
-            Panel content
-          </div>
-        </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">Panel title</h3>
-          </div>
-          <div class="panel-body">
-            Panel content
-          </div>
-        </div>
-    </div>
-</div>
+凯格作为一家专业咨询公司，我们旨在为亚洲地区的高端国际学校提供教育人才寻访、职业发展咨询、薪酬福利咨询三大业务体系。通过完善、高效的服务助力客户学校的持续发展和组织效能的提升。

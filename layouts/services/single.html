@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+{{ partial "head.html" . }}
+
+<body onresize="resizeHeight()">
+
+<div id="all">
+
+  {{ partial "nav.html" . }}
+
+  {{ partial "breadcrumbs.html" . }}
+
+  <div id="content">
+    {{ if isset .Params "id" }}
+
+    {{ partial .Params.id . }}
+
+    {{ else }}
+
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+          <div>
+            {{ .Content }}
+          </div>
+
+          <div class="container div-same-height" style="margin-top: 30px">
+            {{ range $item := .Params.list }}
+            <div class="col-xs-12 col-sm-12 col-md-4">
+              <div class="panel panel-custom">
+                <div class="panel-heading">
+                  <h3 class="panel-title">{{ $item.title }}</h3>
+                </div>
+                <div class="panel-body">
+                  {{ $item.description }}
+                </div>
+                <div class="panel-footer">
+                  <ul class="list-group">
+                    {{ range $link := $item.links }}
+                    <li class="list-group-item">{{ $link.link }}</li>
+                    {{ end }}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            {{ end }}
+          </div>
+
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    {{ end }}
+  </div>
+  <!-- /#content -->
+
+  {{ partial "footer.html" . }}
+
+</div>
+<!-- /#all -->
+
+{{ partial "scripts.html" . }}
+
+<script>
+  resizeHeight()
+
+  // same-height
+  function resizeHeight() {
+    var temp = $(window).width()
+    var div = $('.div-same-height')
+
+    if (windowWidth !== temp) {
+
+      setTimeout(function () {
+        if ($(window).width() > 768) {
+          for (let cla of ['.panel-heading', '.panel-body', '.panel-footer']) {
+            let maxHeight = 0
+            let children = $(div).find(cla)
+            children.height('auto')
+
+            children.each(function () {
+              if ($(this).innerHeight() > maxHeight) {
+                maxHeight = $(this).innerHeight()
+              }
+            })
+            children.innerHeight(maxHeight)
+          }
+        } else {
+          $('.div-same-height').find('.panel-heading,.panel-body,.panel-footer').height('auto')
+        }
+      }, 205)
+
+    }
+  }
+
+</script>
+
+</body>
+</html>
