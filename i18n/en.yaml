@@ -130,3 +130,18 @@
 
 - id: educationBackground
   translation: "Education Background"
+
+- id: requiredFields
+  translation: "Required Fields"
+
+- id: yourPosition
+  translation: "Your Position"
+
+- id: city
+  translation: "Required Fields"
+
+- id: pleaseFillInYourDetailedRequirements
+  translation: "Please fill in your detailed requirements"
+
+- id: submit
+  translation: "SUBMIT"

@@ -1,10 +1,9 @@
 +++
-title = "Contact"
 id = "contact"
+title = "Contact with Us"
+subtitle = "Thanks for following Carmean & Gohlke"
 +++
 
-# We are here to help you
+# Please contact with our consultant
 
-Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-
-Please feel free to contact us, our customer service center is working for you 24/7.
+Please fill in the following information, Carmean&Gohlke's consultants will contact you as soon as possible, thank you!
