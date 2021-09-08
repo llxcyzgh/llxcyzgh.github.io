@@ -99,16 +99,16 @@
   translation: "Professional Information"
 
 - id: firstName
-  translation: "First Name"
+  translation: "名"
 
 - id: lastName
-  translation: "Last Name"
+  translation: "姓"
 
 - id: emailAddress
-  translation: "E-mail Address"
+  translation: "邮件地址"
 
 - id: phoneNumber
-  translation: "Phone Number"
+  translation: "联系电话"
 
 - id: preferredMethodOfContact
   translation: "Preferred Method of Contact"
@@ -120,7 +120,7 @@
   translation: "Years of Professional Experience"
 
 - id: schoolName
-  translation: "School Name"
+  translation: "学校名称"
 
 - id: yourPositionWithinTheOrganization
   translation: "Your position within the organization"
@@ -135,13 +135,13 @@
   translation: "必填项"
 
 - id: yourPosition
-  translation: "Your Position"
+  translation: "您的职务"
 
 - id: city
-  translation: "Required Fields"
+  translation: "城市"
 
 - id: pleaseFillInYourDetailedRequirements
-  translation: "Please fill in your detailed requirements"
+  translation: "请填写您的详细需求"
 
 - id: submit
   translation: "提交"

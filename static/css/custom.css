@@ -1,6 +1,12 @@
 /* your styles go here */
 /* Example site test */
 
+@media (max-width: 991px){
+    #heading-breadcrumbs p {
+        text-align: center;
+    }
+}
+
 .box-image-text .image {
     min-height: 200px;
     max-height: 200px;

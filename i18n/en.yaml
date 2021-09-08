@@ -138,7 +138,7 @@
   translation: "Your Position"
 
 - id: city
-  translation: "Required Fields"
+  translation: "City"
 
 - id: pleaseFillInYourDetailedRequirements
   translation: "Please fill in your detailed requirements"
