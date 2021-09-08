@@ -65,7 +65,7 @@ weight = 3
 
 [[bottom_middle]]
 name = "加入我们"
-url = "/join"
+url = "/about/join"
 weight = 4
 
 
