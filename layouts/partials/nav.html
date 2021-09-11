@@ -138,7 +138,7 @@
           <!-- Language List -->
           {{ if .IsTranslated }}
           <li class="dropdown language-set">
-            <a href="javascript:void(0);">
+            <a href="javascript:void(0);" style="max-height: 67px">
               <select style="border: none" id="select-language" onchange="location = this.value;">
                 {{ $siteLanguages := site.Languages}}
                 {{ $pageLang := .Page.Lang}}
