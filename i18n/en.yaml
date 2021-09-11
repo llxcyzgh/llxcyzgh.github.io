@@ -145,3 +145,6 @@
 
 - id: submit
   translation: "SUBMIT"
+
+- id: comingSoon
+  translation: "Coming soon"

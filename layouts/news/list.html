@@ -14,6 +14,7 @@
     <div class="container">
       {{ $paginator := .Paginate (where .Data.Pages "Type" "news") }}
 
+      {{ if gt $paginator.NumberOfElements 0 }}
       <section class="insights">
         <!-- list -->
         <div class="list-group">
@@ -75,6 +76,9 @@
 
       </section>
 
+      {{ else }}
+        <p class="text-center">{{ i18n "comingSoon" }} ~</p>
+      {{ end }}
       <!-- /.row -->
     </div>
     <!-- /.container -->

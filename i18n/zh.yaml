@@ -145,3 +145,6 @@
 
 - id: submit
   translation: "提交"
+
+- id: comingSoon
+  translation: "马上呈现"
