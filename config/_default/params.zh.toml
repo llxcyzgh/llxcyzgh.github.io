@@ -81,6 +81,8 @@ address = """<p class="text-uppercase"><strong>Universal Ltd.</strong>
 enable = true
 email = "business@carmeanandgohlke.com"
 text = "联系我们"
+application = "候选人申请"
+link = "application"
 
 # Enable and disable widgets for the right sidebar
 [widgets]
