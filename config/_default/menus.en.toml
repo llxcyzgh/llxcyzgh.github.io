@@ -4,30 +4,44 @@ name = "Home"
 identifier = "menu.home"
 url = "/"
 weight = 1
+[main.params]
+type = ""
+
 
 [[main]]
 name = "Our Services"
 identifier = "menu.services"
 url = "services"
 weight = 2
+[main.params]
+type = "services"
+
 
 [[main]]
 name = "Research&Report"
 identifier = "menu.reports"
 url = "reports"
 weight = 3
+[main.params]
+type = "reports"
+
 
 [[main]]
 name = "Principal Insights"
 identifier = "menu.insights"
 url = "insights"
 weight = 4
+[main.params]
+type = "insights"
+
 
 [[main]]
 name = "About Us"
 identifier = "menu.about"
 url = "about"
 weight = 5
+[main.params]
+type = "about"
 
 
 

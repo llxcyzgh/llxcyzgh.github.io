@@ -4,30 +4,44 @@ name = "首页"
 identifier = "menu.home"
 url = "/"
 weight = 1
+[main.params]
+type = ""
+
 
 [[main]]
 name = "我们的业务"
 identifier = "menu.services"
-url = "/services"
+url = "services"
 weight = 2
+[main.params]
+type = "services"
+
 
 [[main]]
 name = "研究报告"
 identifier = "menu.reports"
-url = "/reports"
+url = "reports"
 weight = 3
+[main.params]
+type = "reports"
+
 
 [[main]]
 name = "校长洞见"
 identifier = "menu.insights"
 url = "insights"
 weight = 4
+[main.params]
+type = "insights"
+
 
 [[main]]
 name = "关于我们"
 identifier = "menu.about"
-url = "/about"
+url = "about"
 weight = 5
+[main.params]
+type = "about"
 
 
 
