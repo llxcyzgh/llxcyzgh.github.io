@@ -1,0 +1,17 @@
+weight: 3
+en:
+    title: "SALARY AND BENEFITS CONSULTING"
+    description: >
+      <ul class="list-style-none">
+        <li>Salary&Benefits for executives</li>
+        <li>Salary&Benefits for teachers</li>
+      </ul>
+    image: "/img/carousel/salary-benefits.jpg"
+zh:
+    title: "薪资福利咨询"
+    description: >
+      <ul class="list-style-none">
+        <li>管理层薪资福利咨询</li>
+        <li>教师薪资福利咨询</li>
+      </ul>
+    image: "/img/carousel/salary-benefits.jpg"

@@ -1,0 +1,17 @@
+weight: 2
+en:
+    title: "CAREER DEVELOPMENT CONSULTING"
+    description: >
+      <ul class="list-style-none">
+         <li>Principal leadership</li>
+         <li>Teacher professional development</li>
+       </ul>
+    image: "/img/carousel/career-development-consulting.jpg"
+zh:
+    title: "职业发展咨询"
+    description: >
+      <ul class="list-style-none">
+         <li>校长领导力</li>
+         <li>教师职业发展</li>
+       </ul>
+    image: "/img/carousel/career-development-consulting.jpg"

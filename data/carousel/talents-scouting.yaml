@@ -1,0 +1,19 @@
+weight: 1
+en:
+    title: "TALENTS SCOUTING"
+    description: >
+        <ul class="list-style-none">
+            <li>Principal/Deputy Principal</li>
+            <li>Head of subject/department</li>
+            <li>Subject teacher</li>
+        </ul>
+    image: "/img/carousel/talents-scouting.jpg"
+zh:
+    title: "人才寻访"
+    description: >
+        <ul class="list-style-none">
+            <li>校长/副校长</li>
+            <li>中层学科/部门负责人</li>
+            <li>学科教师</li>
+        </ul>
+    image: "/img/carousel/talents-scouting.jpg"
