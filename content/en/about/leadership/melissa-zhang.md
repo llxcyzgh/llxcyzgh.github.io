@@ -2,15 +2,13 @@
 type = "leader"
 
 title = "Leadership Profile"
-weight = 4
-name = "Melissa Zhang"
-jobTitle = "CEO, Malaysia"
+weight = 3
+name = "Lisa Zhang"
+jobTitle = "Vice President, China"
 email = "lisazhang@carmeanandgohlke.com"
 avatar = "img/insights/avatar.jpg"
 +++
 
-"I lived and worked in China, Singapore, and Japan in the early days of my career. The rapid economic development in Asia, especially China, provided new opportunities in education. So when we founded Carmean & Gohlke, we set up our Asia headquarter in Shanghai, China. We are committed to providing professional and precise talent scouting, career development consulting, salary and benefits consulting for international schools in Asia."
+Lisa Zhang works for Carmean & Gohlke as the vice president of China. Responsible for the implementation of RPO projects, and at the same time leading the formulation,implementation and supervision of Carmean & Gohlke's talent strategy in China.
 
-<p class="text-right">
-   Ian Carmean
-</p>
+Before joining Carmean & Gohlke, Lisa Zhang had more than 13 years of practice and management experience in education and human resource services industry, and successfully founded her own headhunting company. Her excellent project management ability and overall coordination ability provide a strong guarantee for the implementation of Carmean & Gohlke's RPO project. Lisa Zhang graduated from Beijing Normal University and currently serves as a consultant for three industry associations.

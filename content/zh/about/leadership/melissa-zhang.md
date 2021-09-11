@@ -2,7 +2,7 @@
 type = "leader"
 
 title = "Leadership Profile"
-weight = 4
+weight = 3
 name = "张小丽"
 jobTitle = "副总裁, 中国区"
 email = "lisazhang@carmeanandgohlke.com"

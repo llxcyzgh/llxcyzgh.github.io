@@ -2,9 +2,9 @@
 type = "leader"
 
 title = "Leadership Profile"
-weight = 3
+weight = 4
 name = "Leon Ren"
-jobTitle = "Vice-President, Greater China"
+jobTitle = "BD&Marketing Director"
 email = "iancarmean@carmeanandgohlke.com"
 avatar = "img/insights/avatar.jpg"
 +++

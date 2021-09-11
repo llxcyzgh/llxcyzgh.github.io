@@ -3,7 +3,7 @@ title = "About us"
 description = "about us"
 keywords = ["about"]
 date = "2021-08-01T21:29:20+02:00"
-banner = "img/sharing-default.png" 
+banner = "img/photogrid.jpg" 
 +++
 
 ### About Carmean & Gohlke

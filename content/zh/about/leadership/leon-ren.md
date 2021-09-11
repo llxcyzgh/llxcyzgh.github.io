@@ -2,9 +2,9 @@
 type = "leader"
 
 title = "Leadership Profile"
-weight = 3
+weight = 4
 name = "任元永"
-jobTitle = "副总裁, 中国区"
+jobTitle = "业务拓展&市场总监"
 email = "iancarmean@carmeanandgohlke.com"
 avatar = "img/insights/avatar.jpg"
 +++
