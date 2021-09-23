@@ -13,7 +13,7 @@
 
   <div id="content">
     <div class="container">
-      <div id="form">
+      <div id="form" x-data="form">
         <h2>{{ i18n "candidateApplication" }}</h2>
 
         <div class="row">
@@ -23,37 +23,39 @@
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "firstName" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "firstName" }}' x-model="firstName">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "lastName" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "lastName" }}' x-model="lastName">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "emailAddress" }}'>
+              <input class="form-control" type="email" placeholder='{{ i18n "emailAddress" }}' x-model="emailAddress">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "phoneNumber" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "phoneNumber" }}' x-model="phoneNumber">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "preferredMethodOfContact" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "preferredMethodOfContact" }}'
+                     x-model="preferredMethodOfContact">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "countryOfResidence" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "countryOfResidence" }}'
+                     x-model="countryOfResidence">
             </div>
           </div>
         </div>
@@ -67,31 +69,35 @@
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "yearsOfProfessionalExperience" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "yearsOfProfessionalExperience" }}'
+                     x-model="yearsOfProfessionalExperience">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "schoolName" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "schoolName" }}' x-model="schoolName">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "yourPositionWithinTheOrganization" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "yourPositionWithinTheOrganization" }}'
+                     x-model="yourPositionWithinTheOrganization">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "currentYearSalary" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "currentYearSalary" }}'
+                     x-model="currentYearSalary">
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="text" placeholder='{{ i18n "educationBackground" }}'>
+              <input class="form-control" type="text" placeholder='{{ i18n "educationBackground" }}'
+                     x-model="educationBackground">
             </div>
           </div>
         </div>
@@ -105,7 +111,7 @@
 
           <div class="col-xs-12 col-sm-6 col-md-4">
             <div class="form-group">
-              <input class="form-control" type="file">
+              <input class="form-control" type="file" x-ref="file" @change="changeFile($event.target.files, $dispatch)">
             </div>
           </div>
 
@@ -113,7 +119,9 @@
 
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <button class="btn btn-default btn-lg btn-block text-light bg-darkolivegreen">Submit</button>
+            <button class="btn btn-default btn-lg btn-block text-light bg-darkolivegreen" @click="submit">{{ i18n
+              "submit" }}
+            </button>
           </div>
         </div>
       </div>
@@ -128,6 +136,113 @@
 <!-- /#all -->
 
 {{ partial "scripts.html" . }}
+
+<!-- modal & script -->
+{{ partial "modals.html" . }}
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('form', () => ({
+      firstName: '',
+      lastName: '',
+      emailAddress: '',
+      phoneNumber: '',
+      preferredMethodOfContact: '',
+      countryOfResidence: '',
+
+      yearsOfProfessionalExperience: '',
+      schoolName: '',
+      yourPositionWithinTheOrganization: '',
+      currentYearSalary: '',
+      educationBackground: '',
+
+      filename: null,
+      file: null,
+
+      changeFile(uploadedFiles, dispatch) {
+        if (uploadedFiles.length < 1) {
+          return
+        } else {
+          this.file = uploadedFiles[0]
+        }
+      },
+
+      async submit() {
+        const url = "{{ .Site.Params.api_message }}"
+        let formData = new FormData()
+        let flag = false
+
+        if (this.file && !(this.file.name.includes(".doc") || this.file.name.includes(".pdf"))) {
+          _showModal('error', '{{ i18n "errorMessageFileFormat" }}')
+          return
+        }
+        if (this.file && this.file.size > 10 * 1024 * 1024) {
+          _showModal('error', '{{ i18n "errorMessageFileSize" }}')
+          return
+        }
+        if (this.file) {
+          flag = true
+          formData.append('file', this.file)
+        }
+
+        const fields = [
+          'firstName',
+          'lastName',
+          'emailAddress',
+          'phoneNumber',
+          'preferredMethodOfContact',
+          'countryOfResidence',
+          'yearsOfProfessionalExperience',
+          'schoolName',
+          'yourPositionWithinTheOrganization',
+          'currentYearSalary',
+          'educationBackground',
+        ]
+
+
+        for (let field of fields) {
+          if (this[field].length !== 0) {
+            if (field === 'emailAddress') {
+              const emailReg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+              if (!emailReg.test(this.emailAddress)) {
+                _showModal('error', '{{ i18n "invalidEmailFormat" }}')
+                return
+              }
+            }
+
+            flag = true
+          }
+          formData.append(field, this[field])
+        }
+
+        if (!flag) {
+          return
+        }
+
+        try {
+          _showModal('loading', '')
+          let response = await fetch(url, {
+            method: 'POST',
+            body: formData
+          })
+
+          if (response.ok) {
+            _showModal('success', '')
+
+            let res = await response.json()
+            console.log(res, "success")
+          } else {
+            _showModal('error', '')
+            console.log(response, "error")
+          }
+        } catch (error) {
+          _showModal('error', '')
+          console.log(error, "error2")
+        }
+      },
+    }))
+  })
+</script>
+<!-- /modal & script -->
 
 </body>
 </html>

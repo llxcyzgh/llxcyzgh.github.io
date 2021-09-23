@@ -24,12 +24,9 @@
             </div>
           </div>
         </div>
+
         <div class="form-group">
           <button class="btn btn-default" @click="submit">{{ i18n "submit" }}</button>
-        </div>
-
-        <div class="form-group" x-show="openSuccess">
-          success
         </div>
       </div>
 
@@ -43,11 +40,10 @@
 </div>
 <!-- /#all -->
 
-{{ partial "modals.html" . }}
-
 {{ partial "scripts.html" . }}
 
-<!-- @formatter:of0f00 -->
+<!-- modal & script -->
+{{ partial "modals.html" . }}
 <script>
   document.addEventListener('alpine:init', () => {
     Alpine.data('form', () => ({
@@ -107,7 +103,7 @@
     }))
   })
 </script>
-<!-- @formatter:o000n -->
+<!-- /modal & script -->
 
 </body>
 </html>

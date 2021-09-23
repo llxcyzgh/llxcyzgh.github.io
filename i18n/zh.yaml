@@ -165,7 +165,10 @@
   translation: "提交表单失败, 请重试"
 
 - id: errorMessageFileFormat
-  translation: "文件格式不正确, 请重试"
+  translation: "文件格式不正确"
 
 - id: errorMessageFileSize
-  translation: "文件大小不能超过10M, 请重试"
+  translation: "文件大小不能超过10M"
+
+- id: invalidEmailFormat
+  translation: "邮件格式不正确"
