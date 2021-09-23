@@ -1,0 +1,69 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="loadingModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-body bg-primary" id="loadingMsg">
+        {{ i18n "loadingMessage" }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="successModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-success">{{ i18n "successTitle" }}</h4>
+      </div>
+      <div class="modal-body bg-success" id="successMsg">
+        {{ i18n "successMessage" }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="errorModal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-danger">{{ i18n "errorTitle" }}</h4>
+      </div>
+      <div class="modal-body bg-danger" id="errorMsg">
+        {{ i18n "errorMessage" }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const defaultSuccessMessage = '{{ i18n "successMessage" }}'
+  const defaultErrorMessage = '{{ i18n "errorMessage" }}'
+
+  function _showModal(status = 'success', msg = '') {
+    if (status === 'loading') {
+      $('#loadingModal').modal()
+      setTimeout(function () {
+        $('#loadingModal').modal('hide')
+      }, 60000)
+    } else {
+      $('#loadingModal').modal('hide')
+
+      if (status === 'success') {
+        if (msg === '') {
+          msg = defaultSuccessMessage
+        }
+        $('#successMsg').text(msg)
+
+        $('#successModal').modal()
+      } else {
+        if (msg === '') {
+          msg = defaultErrorMessage
+        }
+        $('#errorMsg').text(msg)
+
+        $('#errorModal').modal()
+      }
+    }
+
+  }
+</script>

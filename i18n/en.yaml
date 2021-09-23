@@ -148,3 +148,24 @@
 
 - id: comingSoon
   translation: "Coming soon"
+
+- id: loadingMessage
+  translation: "Loading..."
+
+- id: successTitle
+  translation: "Success"
+
+- id: successMessage
+  translation: "Successfully submit form"
+
+- id: errorTitle
+  translation: "Error"
+
+- id: errorMessage
+  translation: "Failed to submit form, please retry later"
+
+- id: errorMessageFileFormat
+  translation: "Invalid file format, please retry"
+
+- id: errorMessageFileSize
+  translation: "File size exceed 10M, please retry"

@@ -16,16 +16,23 @@
 
       {{ .Content }}
 
-      <div class="form-group">
-        <div class="row">
-          <div class="col-md-6">
-            <input type="file" class="form-control">
+      <div x-data="form">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <input type="file" class="form-control" x-ref="file" @change="changeFile($event.target.files, $dispatch)">
+            </div>
           </div>
         </div>
+        <div class="form-group">
+          <button class="btn btn-default" @click="submit">{{ i18n "submit" }}</button>
+        </div>
+
+        <div class="form-group" x-show="openSuccess">
+          success
+        </div>
       </div>
-      <div class="form-group">
-        <button class="btn btn-default">{{ i18n "submit" }}</button>
-      </div>
+
     </div>
     <!-- /.container -->
   </div>
@@ -36,7 +43,71 @@
 </div>
 <!-- /#all -->
 
+{{ partial "modals.html" . }}
+
 {{ partial "scripts.html" . }}
+
+<!-- @formatter:of0f00 -->
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('form', () => ({
+      filename: null,
+      file: null,
+      openSuccess: false,
+      openFail: false,
+
+      changeFile(uploadedFiles, dispatch) {
+        if (uploadedFiles.length < 1) {
+          return
+        } else {
+          this.file = uploadedFiles[0]
+        }
+      },
+
+      async submit() {
+        if (!this.file) {
+          return
+        }
+
+        if (!(this.file.name.includes(".doc") || this.file.name.includes(".pdf"))) {
+          _showModal('error', '{{ i18n "errorMessageFileFormat" }}')
+          return
+        }
+
+        if (this.file.size > 10 * 1024 * 1024) {
+          _showModal('error', '{{ i18n "errorMessageFileSize" }}')
+          return
+        }
+
+        const url = "{{ .Site.Params.api_message }}"
+        let formData = new FormData()
+        formData.append('file', this.file)
+
+        try {
+          _showModal('loading', '')
+          let response = await fetch(url, {
+            method: 'POST',
+            body: formData
+          })
+
+          if (response.ok) {
+            _showModal('success', '')
+
+            let res = await response.json()
+            console.log(res, "success")
+          } else {
+            _showModal('error', '')
+            console.log(response, "error")
+          }
+        } catch (error) {
+          _showModal('error', '')
+          console.log(error, "error2")
+        }
+      },
+    }))
+  })
+</script>
+<!-- @formatter:o000n -->
 
 </body>
 </html>

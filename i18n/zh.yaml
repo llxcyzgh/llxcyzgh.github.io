@@ -148,3 +148,24 @@
 
 - id: comingSoon
   translation: "马上呈现"
+
+- id: loadingMessage
+  translation: "加载中..."
+
+- id: successTitle
+  translation: "成功"
+
+- id: successMessage
+  translation: "成功提交表单"
+
+- id: errorTitle
+  translation: "失败"
+
+- id: errorMessage
+  translation: "提交表单失败, 请重试"
+
+- id: errorMessageFileFormat
+  translation: "文件格式不正确, 请重试"
+
+- id: errorMessageFileSize
+  translation: "文件大小不能超过10M, 请重试"
