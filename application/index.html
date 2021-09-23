@@ -136,7 +136,7 @@ En
 </div>
 <div id=content>
 <div class=container>
-<div id=form>
+<div id=form x-data=form>
 <h2>Candidate Application</h2>
 <div class=row>
 <div class="col-md-12 col-lg-12">
@@ -144,32 +144,32 @@ En
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="First Name">
+<input class=form-control type=text placeholder="First Name" x-model=firstName>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Last Name">
+<input class=form-control type=text placeholder="Last Name" x-model=lastName>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="E-mail Address">
+<input class=form-control type=email placeholder="E-mail Address" x-model=emailAddress>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Phone Number">
+<input class=form-control type=text placeholder="Phone Number" x-model=phoneNumber>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Preferred Method of Contact">
+<input class=form-control type=text placeholder="Preferred Method of Contact" x-model=preferredMethodOfContact>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Country of Residence">
+<input class=form-control type=text placeholder="Country of Residence" x-model=countryOfResidence>
 </div>
 </div>
 </div>
@@ -180,27 +180,27 @@ En
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Years of Professional Experience">
+<input class=form-control type=text placeholder="Years of Professional Experience" x-model=yearsOfProfessionalExperience>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="School Name">
+<input class=form-control type=text placeholder="School Name" x-model=schoolName>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Your position within the organization">
+<input class=form-control type=text placeholder="Your position within the organization" x-model=yourPositionWithinTheOrganization>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Current/Most Recent salary in USD/a year">
+<input class=form-control type=text placeholder="Current/Most Recent salary in USD/a year" x-model=currentYearSalary>
 </div>
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=text placeholder="Education Background">
+<input class=form-control type=text placeholder="Education Background" x-model=educationBackground>
 </div>
 </div>
 </div>
@@ -213,13 +213,14 @@ En
 </div>
 <div class="col-xs-12 col-sm-6 col-md-4">
 <div class=form-group>
-<input class=form-control type=file>
+<input class=form-control type=file x-ref=file @change="changeFile($event.target.files, $dispatch)">
 </div>
 </div>
 </div>
 <div class=row>
 <div class="col-xs-12 col-sm-6 col-md-4">
-<button class="btn btn-default btn-lg btn-block text-light bg-darkolivegreen">Submit</button>
+<button class="btn btn-default btn-lg btn-block text-light bg-darkolivegreen" @click=submit>SUBMIT
+</button>
 </div>
 </div>
 </div>
@@ -291,5 +292,40 @@ En
 <script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
 <script src=/js/front.js></script>
 <script src=/js/owl.carousel.min.js></script>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=loadingModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class="modal-body bg-primary" id=loadingMsg>
+Loading...
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=successModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-success">Success</h4>
+</div>
+<div class="modal-body bg-success" id=successMsg>
+Successfully submit form
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=errorModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-danger">Error</h4>
+</div>
+<div class="modal-body bg-danger" id=errorMsg>
+Failed to submit form, please retry later
+</div>
+</div>
+</div>
+</div>
+<script>const defaultSuccessMessage='Successfully submit form',defaultErrorMessage='Failed to submit form, please retry later';function _showModal(b='success',a=''){b==='loading'?($('#loadingModal').modal(),setTimeout(function(){$('#loadingModal').modal('hide')},6e4)):($('#loadingModal').modal('hide'),b==='success'?(a===''&&(a=defaultSuccessMessage),$('#successMsg').text(a),$('#successModal').modal()):(a===''&&(a=defaultErrorMessage),$('#errorMsg').text(a),$('#errorModal').modal()))}</script>
+<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({firstName:'',lastName:'',emailAddress:'',phoneNumber:'',preferredMethodOfContact:'',countryOfResidence:'',yearsOfProfessionalExperience:'',schoolName:'',yourPositionWithinTheOrganization:'',currentYearSalary:'',educationBackground:'',filename:null,file:null,changeFile(a,b){if(a.length<1)return;this.file=a[0]},async submit(){const c="https://api.carmeanandgohlke.com/message";let a=new FormData,b=!1;if(this.file&&!(this.file.name.includes(".doc")||this.file.name.includes(".pdf"))){_showModal('error','Invalid file format');return}if(this.file&&this.file.size>10*1024*1024){_showModal('error','File size exceed 10M');return}this.file&&(b=!0,a.append('file',this.file));const d=['firstName','lastName','emailAddress','phoneNumber','preferredMethodOfContact','countryOfResidence','yearsOfProfessionalExperience','schoolName','yourPositionWithinTheOrganization','currentYearSalary','educationBackground'];for(let c of d){if(this[c].length!==0){if(c==='emailAddress'){const a=/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;if(!a.test(this.emailAddress)){_showModal('error','Invalid Email format');return}}b=!0}a.append(c,this[c])}if(!b)return;try{_showModal('loading','');let b=await fetch(c,{method:'POST',body:a});if(b.ok){_showModal('success','');let a=await b.json();console.log(a,"success")}else _showModal('error',''),console.log(b,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
 </body>
 </html>

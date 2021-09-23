@@ -209,9 +209,6 @@
 <div class=form-group>
 <button class="btn btn-default" @click=submit>提交</button>
 </div>
-<div class=form-group x-show=openSuccess>
-success
-</div>
 </div>
 </div>
 </div>
@@ -272,6 +269,15 @@ success
 </div>
 </div>
 </div>
+<script defer src=https://cdn.bootcdn.net/ajax/libs/alpinejs/3.2.2/cdn.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/jquery/3.1.1/jquery.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
+<script src=/js/front.js></script>
+<script src=/js/owl.carousel.min.js></script>
 <div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=loadingModal>
 <div class="modal-dialog modal-sm" role=document>
 <div class=modal-content>
@@ -306,15 +312,6 @@ success
 </div>
 </div>
 <script>const defaultSuccessMessage='成功提交表单',defaultErrorMessage='提交表单失败, 请重试';function _showModal(b='success',a=''){b==='loading'?($('#loadingModal').modal(),setTimeout(function(){$('#loadingModal').modal('hide')},6e4)):($('#loadingModal').modal('hide'),b==='success'?(a===''&&(a=defaultSuccessMessage),$('#successMsg').text(a),$('#successModal').modal()):(a===''&&(a=defaultErrorMessage),$('#errorMsg').text(a),$('#errorModal').modal()))}</script>
-<script defer src=https://cdn.bootcdn.net/ajax/libs/alpinejs/3.2.2/cdn.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/jquery/3.1.1/jquery.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/Counter-Up/1.0/jquery.counterup.min.js></script>
-<script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
-<script src=/js/front.js></script>
-<script src=/js/owl.carousel.min.js></script>
-<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({filename:null,file:null,openSuccess:!1,openFail:!1,changeFile(a,b){if(a.length<1)return;this.file=a[0]},async submit(){if(!this.file)return;if(!(this.file.name.includes(".doc")||this.file.name.includes(".pdf"))){_showModal('error','文件格式不正确, 请重试');return}if(this.file.size>10*1024*1024){_showModal('error','文件大小不能超过10M, 请重试');return}const b="https://api.carmeanandgohlke.com/message";let a=new FormData;a.append('file',this.file);try{_showModal('loading','');let c=await fetch(b,{method:'POST',body:a});if(c.ok){_showModal('success','');let a=await c.json();console.log(a,"success")}else _showModal('error',''),console.log(c,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
+<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({filename:null,file:null,openSuccess:!1,openFail:!1,changeFile(a,b){if(a.length<1)return;this.file=a[0]},async submit(){if(!this.file)return;if(!(this.file.name.includes(".doc")||this.file.name.includes(".pdf"))){_showModal('error','文件格式不正确');return}if(this.file.size>10*1024*1024){_showModal('error','文件大小不能超过10M');return}const b="https://api.carmeanandgohlke.com/message";let a=new FormData;a.append('file',this.file);try{_showModal('loading','');let c=await fetch(b,{method:'POST',body:a});if(c.ok){_showModal('success','');let a=await c.json();console.log(a,"success")}else _showModal('error',''),console.log(c,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
 </body>
 </html>
