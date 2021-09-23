@@ -1,0 +1,3 @@
+#################### default parameters ################################
+# api_message = "http://194.50.171.90:8080/message"
+api_message = "https://api.carmeanandgohlke.com/message"
