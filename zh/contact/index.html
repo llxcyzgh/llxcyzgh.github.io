@@ -7,7 +7,7 @@
 <title>联系我们</title>
 <meta name=author content="DevCows">
 <meta name=keywords content="devows,hugo,go">
-<meta name=description content="Site template made by devcows using hugo">
+<meta name=description content="联系凯格咨询">
 <meta name=generator content="Hugo 0.88.1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800" rel=stylesheet type=text/css>
 <link href=//cdn.bootcdn.net/ajax/libs/font-awesome/5.11.2/css/all.min.css rel=stylesheet>
@@ -26,7 +26,7 @@
 <meta property="og:title" content="联系我们">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://llxcyzgh.github.io/zh/contact/">
-<meta property="og:description" content="Site template made by devcows using hugo">
+<meta property="og:description" content="联系凯格咨询">
 <meta property="og:image" content="https://llxcyzgh.github.io/img/sharing-default.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="800">
@@ -35,7 +35,7 @@
 <meta name=twitter:site content="@GoHugoIO">
 <meta name=twitter:title content="联系我们">
 <meta name=twitter:image content="https://llxcyzgh.github.io/img/sharing-default.png">
-<meta name=twitter:description content="Site template made by devcows using hugo">
+<meta name=twitter:description content="联系凯格咨询">
 </head>
 <body>
 <div id=all>
@@ -136,69 +136,66 @@
 </div>
 <div id=content>
 <div class=container id=contact>
-<section>
+<div>
 <h1 id=与我们的顾问沟通>与我们的顾问沟通</h1>
 <p>请填写以下信息，凯格顾问将尽快与您联系，谢谢！</p>
+</div>
 <div class="text-right text-danger">
 * 必填项
 </div>
-<div id=contact-message></div>
-<form method=post action=https://formspree.io/sample/of/endpoint>
-<div class=row>
+<div class=row x-data=form>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=first_name><span class=text-danger>*</span> 名</label>
-<input type=text class=form-control name=first_name id=first_name required>
+<input type=text class=form-control id=first_name required x-model=firstName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=last_name><span class=text-danger>*</span> 姓</label>
-<input type=text class=form-control name=last_name id=last_name required>
+<input type=text class=form-control id=last_name required x-model=lastName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=email><span class=text-danger>*</span> 邮件地址</label>
-<input type=email class=form-control name=email id=email required>
+<input type=email class=form-control id=email required x-model=emailAddress>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=school_name><span class=text-danger>*</span> 学校名称</label>
-<input type=text class=form-control name=school_name id=school_name required>
+<input type=text class=form-control id=school_name required x-model=schoolName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=position><span class=text-danger>*</span> 您的职务</label>
-<input type=text class=form-control name=position id=position required>
+<input type=text class=form-control id=position required x-model=position>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=city><span class=text-danger>*</span> 城市</label>
-<input type=text class=form-control name=city id=city required>
+<input type=text class=form-control id=city required x-model=city>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=phone><span class=text-danger>*</span> 联系电话</label>
-<input type=text class=form-control name=phone id=phone required>
+<input type=text class=form-control id=phone required x-model=phoneNumber>
 </div>
 </div>
 <div class=col-sm-12>
 <div class=form-group>
 <label class=font-bold for=message><span class=text-danger>*</span> 请填写您的详细需求</label>
-<textarea id=message class=form-control name=message rows=5 required></textarea>
+<textarea id=message class=form-control rows=5 required x-model=requirements></textarea>
 </div>
 </div>
 <div class="col-sm-12 text-center">
-<button type=submit class="btn btn-lg btn-template-main">提交</button>
+<button type=submit class="btn btn-lg btn-template-main" @click=submit>提交</button>
 </div>
 </div>
-</form>
-</section>
 </div>
 </div>
 <footer id=footer>
@@ -267,5 +264,41 @@
 <script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
 <script src=/js/front.js></script>
 <script src=/js/owl.carousel.min.js></script>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=loadingModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class="modal-body bg-primary" id=loadingMsg>
+<i class="fas fa-spinner fa-spin"></i> &nbsp;&nbsp;
+加载中...
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=successModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-success">成功</h4>
+</div>
+<div class="modal-body bg-success" id=successMsg>
+成功提交表单
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=errorModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-danger">失败</h4>
+</div>
+<div class="modal-body bg-danger" id=errorMsg>
+提交表单失败, 请重试
+</div>
+</div>
+</div>
+</div>
+<script>const defaultSuccessMessage='成功提交表单',defaultErrorMessage='提交表单失败, 请重试';function _showModal(b='success',a=''){b==='loading'?($('#loadingModal').modal(),setTimeout(function(){$('#loadingModal').modal('hide')},6e4)):($('#loadingModal').modal('hide'),b==='success'?(a===''&&(a=defaultSuccessMessage),$('#successMsg').text(a),$('#successModal').modal()):(a===''&&(a=defaultErrorMessage),$('#errorMsg').text(a),$('#errorModal').modal()))}</script>
+<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({firstName:'',lastName:'',emailAddress:'',schoolName:'',position:'',city:'',phoneNumber:'',requirements:'',async submit(){const b="https://api.carmeanandgohlke.com/message";let a=new FormData;const c=['firstName','lastName','emailAddress','schoolName','position','city','phoneNumber','requirements'];for(let b of c){if(this[b].length===0){_showModal('error','请填写必填字段');return}if(b==='emailAddress'){const a=/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;if(!a.test(this.emailAddress)){_showModal('error','邮件格式不正确');return}}a.append(b,this[b])}try{_showModal('loading','');let c=await fetch(b,{method:'POST',body:a});if(c.ok){_showModal('success','');let a=await c.json();console.log(a,"success")}else _showModal('error',''),console.log(c,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
 </body>
 </html>

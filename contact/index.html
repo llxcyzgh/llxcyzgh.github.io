@@ -7,7 +7,7 @@
 <title>Contact with Us</title>
 <meta name=author content="DevCows">
 <meta name=keywords content="devows,hugo,go">
-<meta name=description content="Site template made by devcows using hugo">
+<meta name=description content="Contact with Carmean &amp;amp; Gohlke">
 <meta name=generator content="Hugo 0.88.1">
 <link href="//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800" rel=stylesheet type=text/css>
 <link href=//cdn.bootcdn.net/ajax/libs/font-awesome/5.11.2/css/all.min.css rel=stylesheet>
@@ -26,7 +26,7 @@
 <meta property="og:title" content="Contact with Us">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://llxcyzgh.github.io/contact/">
-<meta property="og:description" content="Site template made by devcows using hugo">
+<meta property="og:description" content="Contact with Carmean &amp;amp; Gohlke">
 <meta property="og:image" content="https://llxcyzgh.github.io/img/sharing-default.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="800">
@@ -35,7 +35,7 @@
 <meta name=twitter:site content="@GoHugoIO">
 <meta name=twitter:title content="Contact with Us">
 <meta name=twitter:image content="https://llxcyzgh.github.io/img/sharing-default.png">
-<meta name=twitter:description content="Site template made by devcows using hugo">
+<meta name=twitter:description content="Contact with Carmean &amp;amp; Gohlke">
 </head>
 <body>
 <div id=all>
@@ -136,69 +136,66 @@ En
 </div>
 <div id=content>
 <div class=container id=contact>
-<section>
+<div>
 <h1 id=please-contact-with-our-consultant>Please contact with our consultant</h1>
 <p>Please fill in the following information, Carmean&Gohlke&rsquo;s consultants will contact you as soon as possible, thank you!</p>
+</div>
 <div class="text-right text-danger">
 * Required Fields
 </div>
-<div id=contact-message></div>
-<form method=post action=https://formspree.io/sample/of/endpoint>
-<div class=row>
+<div class=row x-data=form>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=first_name><span class=text-danger>*</span> First Name</label>
-<input type=text class=form-control name=first_name id=first_name required>
+<input type=text class=form-control id=first_name required x-model=firstName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=last_name><span class=text-danger>*</span> Last Name</label>
-<input type=text class=form-control name=last_name id=last_name required>
+<input type=text class=form-control id=last_name required x-model=lastName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=email><span class=text-danger>*</span> E-mail Address</label>
-<input type=email class=form-control name=email id=email required>
+<input type=email class=form-control id=email required x-model=emailAddress>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=school_name><span class=text-danger>*</span> School Name</label>
-<input type=text class=form-control name=school_name id=school_name required>
+<input type=text class=form-control id=school_name required x-model=schoolName>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=position><span class=text-danger>*</span> Your Position</label>
-<input type=text class=form-control name=position id=position required>
+<input type=text class=form-control id=position required x-model=position>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=city><span class=text-danger>*</span> City</label>
-<input type=text class=form-control name=city id=city required>
+<input type=text class=form-control id=city required x-model=city>
 </div>
 </div>
 <div class=col-sm-6>
 <div class=form-group>
 <label class=font-bold for=phone><span class=text-danger>*</span> Phone Number</label>
-<input type=text class=form-control name=phone id=phone required>
+<input type=text class=form-control id=phone required x-model=phoneNumber>
 </div>
 </div>
 <div class=col-sm-12>
 <div class=form-group>
 <label class=font-bold for=message><span class=text-danger>*</span> Please fill in your detailed requirements</label>
-<textarea id=message class=form-control name=message rows=5 required></textarea>
+<textarea id=message class=form-control rows=5 required x-model=requirements></textarea>
 </div>
 </div>
 <div class="col-sm-12 text-center">
-<button type=submit class="btn btn-lg btn-template-main">SUBMIT</button>
+<button type=submit class="btn btn-lg btn-template-main" @click=submit>SUBMIT</button>
 </div>
 </div>
-</form>
-</section>
 </div>
 </div>
 <footer id=footer>
@@ -267,5 +264,41 @@ En
 <script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
 <script src=/js/front.js></script>
 <script src=/js/owl.carousel.min.js></script>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=loadingModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class="modal-body bg-primary" id=loadingMsg>
+<i class="fas fa-spinner fa-spin"></i> &nbsp;&nbsp;
+Loading...
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=successModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-success">Success</h4>
+</div>
+<div class="modal-body bg-success" id=successMsg>
+Successfully submit form
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=errorModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-danger">Error</h4>
+</div>
+<div class="modal-body bg-danger" id=errorMsg>
+Failed to submit form, please retry later
+</div>
+</div>
+</div>
+</div>
+<script>const defaultSuccessMessage='Successfully submit form',defaultErrorMessage='Failed to submit form, please retry later';function _showModal(b='success',a=''){b==='loading'?($('#loadingModal').modal(),setTimeout(function(){$('#loadingModal').modal('hide')},6e4)):($('#loadingModal').modal('hide'),b==='success'?(a===''&&(a=defaultSuccessMessage),$('#successMsg').text(a),$('#successModal').modal()):(a===''&&(a=defaultErrorMessage),$('#errorMsg').text(a),$('#errorModal').modal()))}</script>
+<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({firstName:'',lastName:'',emailAddress:'',schoolName:'',position:'',city:'',phoneNumber:'',requirements:'',async submit(){const b="https://api.carmeanandgohlke.com/message";let a=new FormData;const c=['firstName','lastName','emailAddress','schoolName','position','city','phoneNumber','requirements'];for(let b of c){if(this[b].length===0){_showModal('error','Required fields can\u0027t be empty');return}if(b==='emailAddress'){const a=/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;if(!a.test(this.emailAddress)){_showModal('error','Invalid Email format');return}}a.append(b,this[b])}try{_showModal('loading','');let c=await fetch(b,{method:'POST',body:a});if(c.ok){_showModal('success','');let a=await c.json();console.log(a,"success")}else _showModal('error',''),console.log(c,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
 </body>
 </html>

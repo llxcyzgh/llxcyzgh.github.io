@@ -206,5 +206,41 @@
 <script src=//cdn.bootcdn.net/ajax/libs/jquery-parallax/1.1.3/jquery-parallax.js></script>
 <script src=/js/front.js></script>
 <script src=/js/owl.carousel.min.js></script>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=loadingModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class="modal-body bg-primary" id=loadingMsg>
+<i class="fas fa-spinner fa-spin"></i> &nbsp;&nbsp;
+加载中...
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=successModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-success">成功</h4>
+</div>
+<div class="modal-body bg-success" id=successMsg>
+成功提交表单
+</div>
+</div>
+</div>
+</div>
+<div class="modal fade" tabindex=-1 role=dialog aria-labelledby=mySmallModalLabel id=errorModal>
+<div class="modal-dialog modal-sm" role=document>
+<div class=modal-content>
+<div class=modal-header>
+<h4 class="modal-title text-danger">失败</h4>
+</div>
+<div class="modal-body bg-danger" id=errorMsg>
+提交表单失败, 请重试
+</div>
+</div>
+</div>
+</div>
+<script>const defaultSuccessMessage='成功提交表单',defaultErrorMessage='提交表单失败, 请重试';function _showModal(b='success',a=''){b==='loading'?($('#loadingModal').modal(),setTimeout(function(){$('#loadingModal').modal('hide')},6e4)):($('#loadingModal').modal('hide'),b==='success'?(a===''&&(a=defaultSuccessMessage),$('#successMsg').text(a),$('#successModal').modal()):(a===''&&(a=defaultErrorMessage),$('#errorMsg').text(a),$('#errorModal').modal()))}</script>
+<script>document.addEventListener('alpine:init',()=>{Alpine.data('form',()=>({fullName:'',city:'',schoolName:'',emailAddress:'',async submit(){const b="https://api.carmeanandgohlke.com/message";let a=new FormData;const c=['fullName','city','schoolName','emailAddress'];for(let b of c){if(this[b].length===0){_showModal('error','请填写必填字段');return}if(b==='emailAddress'){const a=/^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;if(!a.test(this.emailAddress)){_showModal('error','邮件格式不正确');return}}a.append(b,this[b])}try{_showModal('loading','');let c=await fetch(b,{method:'POST',body:a});if(c.ok){_showModal('success','');let a=await c.json();console.log(a,"success")}else _showModal('error',''),console.log(c,"error")}catch(a){_showModal('error',''),console.log(a,"error2")}}}))})</script>
 </body>
 </html>
