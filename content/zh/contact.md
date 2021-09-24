@@ -1,6 +1,7 @@
 +++
-id = "contact"
+type = "contact"
 title = "联系我们"
+description = "联系凯格咨询"
 subtitle = "感谢您关注凯格咨询"
 +++
 

@@ -1,6 +1,7 @@
 +++
-id = "contact"
+type = "contact"
 title = "Contact with Us"
+description = "Contact with Carmean & Gohlke"
 subtitle = "Thanks for following Carmean & Gohlke"
 +++
 

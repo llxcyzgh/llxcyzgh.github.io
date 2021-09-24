@@ -165,10 +165,13 @@
   translation: "Failed to submit form, please retry later"
 
 - id: errorMessageFileFormat
-  translation: "Invalid file format"
+  translation: "Invalid file format, only accept word and pdf"
 
 - id: errorMessageFileSize
   translation: "File size exceed 10M"
 
 - id: invalidEmailFormat
   translation: "Invalid Email format"
+
+- id: emptyRequiredFields
+  translation: "Required fields can't be empty"
