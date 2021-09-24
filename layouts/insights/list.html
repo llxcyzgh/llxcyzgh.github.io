@@ -101,5 +101,68 @@
 
 {{ partial "scripts.html" . }}
 
+<!-- modal & script -->
+{{ partial "modals.html" . }}
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('form', () => ({
+      fullName: '',
+      city: '',
+      schoolName: '',
+      emailAddress: '',
+
+      async submit() {
+        const url = "{{ .Site.Params.api_message }}"
+        let formData = new FormData()
+
+        const fields = [
+          'fullName',
+          'city',
+          'schoolName',
+          'emailAddress',
+        ]
+
+        for (let field of fields) {
+          if (this[field].length === 0) {
+            _showModal('error', '{{ i18n "emptyRequiredFields" }}')
+            return
+          } else {
+            if (field === 'emailAddress') {
+              const emailReg = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/
+              if (!emailReg.test(this.emailAddress)) {
+                _showModal('error', '{{ i18n "invalidEmailFormat" }}')
+                return
+              }
+            }
+          }
+          formData.append(field, this[field])
+        }
+
+        try {
+          _showModal('loading', '')
+          let response = await fetch(url, {
+            method: 'POST',
+            body: formData
+          })
+
+          if (response.ok) {
+            _showModal('success', '')
+
+            let res = await response.json()
+            console.log(res, "success")
+          } else {
+            _showModal('error', '')
+            console.log(response, "error")
+          }
+        } catch (error) {
+          _showModal('error', '')
+          console.log(error, "error2")
+        }
+      },
+    }))
+  })
+</script>
+<!-- /modal & script -->
+
 </body>
 </html>

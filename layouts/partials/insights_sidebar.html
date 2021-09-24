@@ -8,36 +8,40 @@
 <!--    <p>{{ .Params.Text.Footer }}</p>-->
 
 
-    <form style="margin-top: 30px">
+    <div style="margin-top: 30px" x-data="form">
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><i class="fa fa-user"></i></div>
-          <input type="text" class="form-control" id="name" placeholder="{{ .Params.Fields.Name }}">
+          <input type="text" class="form-control" id="name" placeholder="{{ .Params.Fields.Name }}" required
+                 x-model="fullName">
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><i class="fa fa-location-arrow"></i></div>
-          <input type="text" class="form-control" id="city" placeholder="{{ .Params.Fields.City }}">
+          <input type="text" class="form-control" id="city" placeholder="{{ .Params.Fields.City }}" required
+                 x-model="city">
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><i class="fa fa-building"></i></div>
-          <input type="text" class="form-control" id="schoolName" placeholder="{{ .Params.Fields.SchoolName }}">
+          <input type="text" class="form-control" id="schoolName" placeholder="{{ .Params.Fields.SchoolName }}" required
+                 x-model="schoolName">
         </div>
       </div>
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-addon"><i class="fa fa-envelope"></i></div>
-          <input type="email" class="form-control" id="email" placeholder="{{ .Params.Fields.Email }}">
+          <input type="email" class="form-control" id="email" placeholder="{{ .Params.Fields.Email }}" required
+                 x-model="emailAddress">
         </div>
       </div>
 
       <div class="form-group">
-        <button type="submit" class="btn btn-default">{{ i18n "submit" }}</button>
+        <button class="btn btn-default" @click="submit">{{ i18n "submit" }}</button>
       </div>
-    </form>
+    </div>
 
   </div>
 
